@@ -31,6 +31,10 @@ test("server-renders the Progress Ledger product surface", async () => {
   const html = await response.text();
   assert.match(html, /Progress Ledger/);
   assert.match(html, /Verified work first/);
+  assert.match(html, /pre-v0\.1/i);
+  assert.match(html, /Work in progress, by design/);
+  assert.match(html, /v0\.1 drafts/i);
+  assert.match(html, /Proof receipt schema/);
   assert.match(html, /No token at genesis/);
   assert.match(html, /Agent-native/);
   assert.match(html, /Chain-agnostic/);
