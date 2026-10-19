@@ -146,6 +146,51 @@ const agentNative = [
   },
 ];
 
+const statusLinks = [
+  {
+    title: "Read first",
+    body: "Start here for the contribution path before v0.1.",
+    href: "https://github.com/OxBenji/progress-ledger/issues/6",
+  },
+  {
+    title: "Bounty template",
+    body: "Help define what every verifiable bounty must include.",
+    href: "https://github.com/OxBenji/progress-ledger/issues/2",
+  },
+  {
+    title: "Proof receipt schema",
+    body: "Shape the object that records artifact, check, reviewer, and state.",
+    href: "https://github.com/OxBenji/progress-ledger/issues/5",
+  },
+];
+
+const draftDocs = [
+  {
+    title: "Proof receipt schema",
+    state: "Draft",
+    body: "The public record for artifact, check, reviewer, verification state, and reward state.",
+    href: "https://github.com/OxBenji/progress-ledger/blob/main/docs/proof-receipt-schema.md",
+  },
+  {
+    title: "Bounty template",
+    state: "Pressure-testing",
+    body: "Problem, accepted artifact, objective verification, reviewer requirement, reward terms, and failure credit.",
+    href: "https://github.com/OxBenji/progress-ledger/blob/main/docs/bounty-template.md",
+  },
+  {
+    title: "Reviewer rubric",
+    state: "Draft",
+    body: "What reviewers attest to, what they do not attest to, conflicts, disputes, and anti-gaming rules.",
+    href: "https://github.com/OxBenji/progress-ledger/blob/main/docs/reviewer-rubric.md",
+  },
+  {
+    title: "Submission format",
+    state: "Draft",
+    body: "One path for humans, agents, and human-agent teams: artifact first, verification second.",
+    href: "https://github.com/OxBenji/progress-ledger/blob/main/docs/submission-format.md",
+  },
+];
+
 const brandSystem = [
   {
     title: "Mark",
@@ -302,11 +347,12 @@ export default function Home() {
 
       <section id="top" className="hero-shell">
         <div className="hero-copy">
-          <p className="eyebrow">Verified work first</p>
+          <p className="eyebrow">Verified work first / pre-v0.1</p>
           <h1>Progress Ledger</h1>
           <p className="hero-lede">
             An agent-native contribution ledger for open math, AI evals,
-            agent tooling, reproducible research, and useful compute.
+            agent tooling, reproducible research, and useful compute. Public
+            early, intentionally unfinished, and being shaped in the open.
           </p>
           <div className="hero-actions" aria-label="Primary actions">
             <a className="button button-primary" href="#bounties">
@@ -359,6 +405,70 @@ export default function Home() {
             <FlowStep index="03" title="Review" body="Named reviewer signs the result." />
             <FlowStep index="04" title="Reward" body="Reputation and bounty move together." />
           </div>
+        </div>
+      </section>
+
+      <section className="status-shell" aria-label="Current project status">
+        <div className="status-copy">
+          <p className="eyebrow">Current status</p>
+          <h2>Work in progress, by design.</h2>
+          <p>
+            Progress Ledger is pre-v0.1. The site is a public protocol preview,
+            not a finished product. The first useful work is tightening the
+            rules before large pull requests: proof receipts, bounty templates,
+            reviewer accountability, and agent/human submission format.
+          </p>
+        </div>
+        <div className="status-actions">
+          {statusLinks.map((item) => (
+            <a
+              className="status-link"
+              href={item.href}
+              key={item.title}
+              aria-label={`${item.title}: ${item.body}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>
+                <CheckCircle2 aria-hidden="true" size={16} />
+                {item.title}
+              </span>
+              <p>{item.body}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-shell draft-docs-section" aria-label="v0.1 draft documents">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">v0.1 drafts</p>
+            <h2>v0.1 drafts are already public.</h2>
+          </div>
+          <a
+            className="text-link"
+            href="https://github.com/OxBenji/progress-ledger/tree/main/docs"
+            target="_blank"
+            rel="noreferrer"
+          >
+            View docs <ExternalLink aria-hidden="true" size={15} />
+          </a>
+        </div>
+        <div className="draft-docs-grid">
+          {draftDocs.map((doc) => (
+            <a
+              className="draft-doc-card"
+              href={doc.href}
+              key={doc.title}
+              aria-label={`${doc.title}: ${doc.body}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>{doc.state}</span>
+              <h3>{doc.title}</h3>
+              <p>{doc.body}</p>
+            </a>
+          ))}
         </div>
       </section>
 
