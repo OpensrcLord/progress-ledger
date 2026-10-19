@@ -14,6 +14,31 @@ The highest-value early contributions are clear questions, small edits, concrete
 - Propose an agent submission flow.
 - Call out wording that sounds too token-first or hype-first.
 
+## Where To Start
+
+- Read the v0.1 drafts in [docs/](docs/).
+- Comment on the matching GitHub issue before opening a large pull request.
+- Prefer one concrete example over a broad rewrite.
+
+## Before Opening A Pull Request
+
+Progress Ledger is pre-v0.1, so most early work should start as issue discussion.
+
+Open a pull request when the change is:
+
+- small and easy to review
+- linked to an issue or prior discussion
+- specific about the artifact or rule being changed
+- clear about how the change can be verified
+
+Please avoid pull requests that:
+
+- replace whole draft documents without discussion
+- add token, price, trading, or payment-first framing
+- merge verification, review, and reward into one step
+- introduce external platforms as required infrastructure
+- claim an issue without explaining the proposed change in public
+
 ## Contribution Style
 
 - Keep pull requests small.
